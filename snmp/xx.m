@@ -1,0 +1,6 @@
+% getTablespacePic("F:\ReportData\B2B-Oracle\tablespace")
+% getSessionPic("F:\ReportData\B2B-Oracle\session")
+% getHitratioPic("F:\ReportData\B2B-Oracle\hitratio")
+ getArchivePic("F:\ReportData\B2B-Oracle\archive")
+% bar([1 10 7 8 2 2 9 3 6])
+% print('FillPageFigure','-djpg','-fillpage')
