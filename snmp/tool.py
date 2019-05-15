@@ -104,21 +104,5 @@ def getItemInfo(keyword):
         if keyword in host:
             itemInfo[host]=hostInfo[host]
     return itemInfo
-
-if __name__ == '__main__':
-    itemKey=["UPS","TH","EM","PL","net","system.cpu","system.swap","vm","vfs","tablespace","session","hitratio","archive_log"]
-    engineRoomInfo=getItemInfo("机房")
-    #crmInfo=getItemInfo("CRM")
-    itemInfo=zabbixCom.getItemBaseHostID(engineRoomInfo)
-    #crmItemInfo=zabbixCom.getItemBaseHostID(crmInfo)
-    upsInfo=getHistoryData("UPS",itemInfo,zabbixCom.time_TimeStamp("2019-04-11 08:00:00"),zabbixCom.time_TimeStamp("2019-04-11 12:00:00"),itemKey)
-    #thInfo=getHistoryData("TH",itemInfo,zabbixCom.time_TimeStamp("2019-02-02 00:00:00"),zabbixCom.time_TimeStamp("2019-02-02 23:59:59"))
-    #emInfo=getHistoryData("EM",itemInfo,zabbixCom.time_TimeStamp("2019-02-02 20:58:00"),zabbixCom.time_TimeStamp("2019-02-02 23:59:59"))
-    #getPic(emInfo)
-    #crmCPUData=getHistoryData("CPU",crmItemInfo,zabbixCom.time_TimeStamp("2019-02-02 20:58:00"),zabbixCom.time_TimeStamp("2019-02-02 23:59:59"))
-    #crmMemData=getHistoryData("disk",crmItemInfo,zabbixCom.time_TimeStamp("2019-02-02 23:50:00"),zabbixCom.time_TimeStamp("2019-02-02 23:59:59"))
-    #print(crmMemData)
-    #print(clearWindowsFilestr("'E:/ReportData/CRMAPP/vfs.fs.size[/,free]_B.dat'"))
-    
-    
+  
    
