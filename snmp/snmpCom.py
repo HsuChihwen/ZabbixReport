@@ -68,11 +68,3 @@ def snmpNextCdm(Host,Port,Community,MIB=[]):
                 temp=str(varBind).split('=')
                 value[temp[0]]=temp[1]
     return value
-
-if __name__ == '__main__':
-    MIB=['IF-MIB','ifName','1']
-    #print(snmpGetCmd("10.0.0.1",161,'zabbix',MIB))
-    #print(snmpbulkCmd("10.0.0.1","161","zabbix",MIB))
-    d=snmpNextCdm("10.0.0.1","161","zabbix",MIB)
-    for k,v in d.items() :
-        print(k,v)
