@@ -129,21 +129,4 @@ def getAllData():
         info['name']=value['name']
         HostInfo.append(info)
     return HostInfo
-    
-
-if __name__ == '__main__':
-    url="http://zabbix.xingyun361.com/zabbix/api_jsonrpc.php"
-    user="admin"
-    passwd="zabbix"
-    authID = zabbixLogin(user,passwd)
-    hostInfo=get_Host(authID)
-    itemInfo=get_Itemprototype(authID)
-    #print(getAllHostInfoBaseHostAndItem(hostInfo,itemInfo))
-
-    
-    
-    startTime = time_TimeStamp("2019-01-20 08:00:00")
-    endTime = time_TimeStamp("2018-01-20 08:10:00")
-    print(get_HistoryData(authID, startTime, endTime,25796,10112))
-    #print(getHostIDFromName(authID,"zabbix.xingyun361.com"))
-    #print(getItemIDFromHostID(authID,'10107'))
+   
