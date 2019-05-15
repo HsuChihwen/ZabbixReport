@@ -9,13 +9,13 @@ except ImportError:
         
             
 def getCookies():
-    url='http://veeambackup.xingyun361.com:9399/api/sessionMngr/?v=latest'
-    r=requests.post(url,auth=('administrator','zhd@2019'))
+    url='url'
+    r=requests.post(url,auth=('username','password'))
     cookies=requests.utils.dict_from_cookiejar(r.cookies)
     return cookies
 
 def getLastSevenDaysJobsInfo(url,cookies):
-    r=requests.get(url,cookies=cookies,auth=('administrator','zhd@2019'))
+    r=requests.get(url,cookies=cookies,auth=('username','password'))
     tree=ET.fromstring(r.content)
     lastSevenDaysJobsInfo=[]
     for child in tree:
@@ -24,7 +24,7 @@ def getLastSevenDaysJobsInfo(url,cookies):
     
 
 def getDiskCapInfo(url,cookies):
-    r=requests.get(url,cookies=cookies,auth=('administrator','zhd@2019'))
+    r=requests.get(url,cookies=cookies,auth=('username','password')))
     root = ET.fromstring(r.content)
     diskCapInfo={}
     name=root[0][0].tag
@@ -38,7 +38,7 @@ def getDiskCapInfo(url,cookies):
     return diskCapInfo
 
 def getVMSOverview(url,cookies):
-    r=requests.get(url,cookies=cookies,auth=('administrator','zhd@2019'))
+    r=requests.get(url,cookies=cookies,auth=('username','password')))
     root = ET.fromstring(r.content)
     vmsOverview={}
     for child in root:
@@ -46,18 +46,6 @@ def getVMSOverview(url,cookies):
         text=child.text
         vmsOverview[tag.split('}')[1]]=text
     return vmsOverview
-
-
-if __name__ == '__main__':
-    cookies=getCookies()
-    last_SevenDays_Jobs="http://veeambackup.xingyun361.com:9399/api/reports/summary/processed_vms"
-    last_SevenDays_Jobs_Info=getLastSevenDaysJobsInfo(last_SevenDays_Jobs,cookies)
-
-    disk_CapInfo="http://veeambackup.xingyun361.com:9399/api/reports/summary/repository"
-    diskCapInfo=getDiskCapInfo(disk_CapInfo,cookies)
-
-    vms_overview="http://veeambackup.xingyun361.com:9399/api/reports/summary/vms_overview"
-    vmsoverview=getVMSOverview(vms_overview,cookies)
     
     
     
