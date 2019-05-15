@@ -117,15 +117,3 @@ def getComputeResource(Folder,computeResourceList):
     else:
         computeResourceList.append(Folder)
     return computeResourceList
-
-if __name__ == "__main__":
-    host = "vcenter.xingyun361.com"
-    user = "administrator@vsphere.local"
-    pwd = "Zhd@esxi.com2016"
-    port = "443"
-    content=vCenterLogin(host,user,pwd,port)
-    datastoresInfo=getDatastores(content)
-    getHosts=getHosts(content)
-    #getPerfManager(content,60,"20190221","20190221")
-    vmInfo=getVM(content)
-    print(getHosts)
